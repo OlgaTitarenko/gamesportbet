@@ -1,14 +1,16 @@
 <header class="header">
-  <div class="header__content header__content">
-	@@include('_matches.html',{})
+  <div class="header__content ">
+	  @@include('_matches.html',{})
 
     <div class="header_search">
       <div class="header_search__logo">
         <img src="./img/logo/logo.svg" alt="gamebet logo" />
       </div>
-     @@include('_search.html',{})
+      <div class="header_search__search">
+        @@include('_search.html',{})
+      </div>
       <div class="header_search__user">
-        <div class="autorization autorization__hide">
+        <div class="autorization autorization_hide">
           <button class="autorization__login">
             <img src="./img/icons/user.svg" alt="">
             Войти
@@ -30,12 +32,12 @@
             </button>
           </div>
           <div class="profile__user">
-            <button class="profile__user__button">
+            <button class="profile__button">
               <img src="./img/icons/user.svg" alt="">
               Валентин Константинович
             </button>
-            <div class="profile__user__details">
-              <div class="user__status">
+            <div class="profile__details details">
+              <div class="profile__status">
                 <span class="details__title">
                   Статус
                 </span>
@@ -43,14 +45,17 @@
                   <p>
                     <img src="./img/icons/medal.svg" alt="medal">
                     Аналитик
-                    <img src="./img/icons/Question.svg" alt="Question">  
+                    <span class="title" data-title = "подсказка" >
+                      <img src="./img/icons/Question.svg" alt="Question">  
+                    </span>
                   </p>
-                  <div class="user__vip">
+                  <div class="details__vip title" data-title = "подсказ kjghj fgdujgvc hgfdythjilhjhc ка">
                       VIP
                   </div>
                 </div>
               </div>
-              <div class="user__balance">
+
+              <div class="profile__balance">
                 <div class="details__info">
                   <div>
                     <span class="details__title">
@@ -62,31 +67,196 @@
                     <span class="details__title">
                       Баланс
                     </span>
-                    <p> 999 999 <img src="./img/icons/roсket.svg" alt=""> </p>
+                    <p> 999 999 
+                      <span class="title" data-title = "подсказка" >
+                        <img src="./img/icons/roсket.svg" alt="">
+                      </span>
+                     </p>
                   </div>
-                  
                 </div>
                 
               </div>
-              <div class="user__progress">
-                <div class="details__info">
+              <div class="profile__progress">
+                <div>
                   <span class="details__title">
                     Последние достижения
                   </span>
-                  <div>
-                    
+                  <div  class="details__info">
+                    <div class="details__progress title title_up" data-title = "подсказка">
+                      <img src="./img/icons/cup.svg" alt="">
+                    </div>
+                    <div class="details__progress title title_up" data-title = "подсказка">
+                      <img src="./img/icons/cup.svg" alt="">
+                    </div>
+                    <div 
+                      class="details__progress details__progress__circle title title_up" 
+                      data-title = "подсказка"
+                      data-percent="70"
+                      >
+                      <svg
+                        class="progress-ring"
+                        width="32"
+                        height="32">
+                        <circle
+                          class="progress-ring__circle"
+                          stroke="#00FFA3"
+                          stroke-width="2"
+                          fill="transparent"
+                          r="15"
+                          cx="16"
+                          cy="16"/>
+                      </svg>
+                      <img src="./img/icons/cup-inactive.svg" alt="">
+                    </div>
+                    <div 
+                      class="details__progress details__progress__circle title title_up"
+                      data-title = "подсказка"
+                      data-percent="35"
+                      >
+                      <svg
+                        class="progress-ring"
+                        width="32"
+                        height="32">
+                        <circle
+                          class="progress-ring__circle"
+                          stroke="#00FFA3"
+                          stroke-width="2"
+                          fill="transparent"
+                          r="15"
+                          cx="16"
+                          cy="16"/>
+                      </svg>
+                      <img src="./img/icons/cup-inactive.svg" alt="">
+                    </div>
+                    <div 
+                      class="details__progress details__progress__circle title title_up " 
+                      data-title = "подсказка"
+                      data-percent="15"
+                      >
+                      <svg
+                        class="progress-ring"
+                        width="32"
+                        height="32">
+                        <circle
+                          class="progress-ring__circle"
+                          stroke="#00FFA3"
+                          stroke-width="2"
+                          fill="transparent"
+                          r="15"
+                          cx="16"
+                          cy="16"/>
+                      </svg>
+                      <img src="./img/icons/cup-inactive.svg" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="user__menu">
-
+              <div class="profile__menu">
+                <a href="#">
+                  Мой профиль
+                </a>
+                <a href="#">
+                  Моя аналитика
+                </a>
+                <a href="#">
+                  Настройки
+                </a>
+                <a href="#promocode" class="_popup-link">
+                  Ввести промокод
+                </a>
+                <a class="profile__menu_red" href="#">
+                  Выход
+                </a>
               </div>
-              text
             </div>
           </div>
          
         </div>
       </div>
     </div>
+
+    <nav class="header_menu">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="#">Новости</a>
+        </li>
+        <li class="menu__item">
+          <a href="#">Матчи</a>
+
+          <ul class="menu__submenu">
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Live</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Игры</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Турниры</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Команды</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Игроки</a>
+            </li>            
+          </ul>
+        </li>
+        <li class="menu__item">
+          <a href="#">Стримы</a>
+
+          <ul class="menu__submenu">
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Топ игры</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Стримы Youtube</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Видео</a>
+            </li>          
+          </ul>
+        </li>
+        <li class="menu__item">
+          <a href="#">Прогнозы</a>
+
+          <ul class="menu__submenu">
+            <li class="menu__item">
+              <a  class="ellipsis" href="#">Прогнозы</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Рейтинг аналитиков</a>
+            </li>
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Рейтинг БК</a>
+            </li>    
+            <li class="menu__item">
+              <a class="ellipsis" href="#">Стать  аналитиком</a>
+            </li>      
+          </ul>
+        </li>
+        <li class="menu__item">
+          <a href="#">База заний</a>
+        </li>
+        <li class="menu__item">
+          <a href="#">О нас</a>
+          
+          <ul class="menu__submenu">
+            <li class="menu__item">
+              <a class="ellipsis" href="#">FAQ / Глоссарий</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu__item">
+          <a href="#">Магазин</a>
+
+          <ul class="menu__submenu">
+            <li class="menu__item">
+              <a class="ellipsis" href="#" title="Академия">Академия</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </nav>
   </div>
 </header>

@@ -134,10 +134,16 @@ textarea {
 	}
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
+    @include subtitle();
+    background-color: $bg-02;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 100%;
+    padding: 10px 16px;
+    border: 0;
+    color: $text-white;
 	&._focus {
 	}
 	&._error {

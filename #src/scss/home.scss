@@ -1,3 +1,37 @@
 //====================================================================================================
-
+.page {
+    &__content {
+        width: 100%;
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1024px 320px;
+        grid-template-rows: auto;
+        column-gap: 32px;
+        row-gap: 32px;
+        grid-template-areas: 
+            "news sidebar"
+            "matches matches"
+            "ratings ratings"
+        ;
+    }
+    &__news {
+        grid-area: news;
+       
+    }
+    &__sidebar {
+        grid-area: sidebar;
+        background-color: greenyellow;
+    }
+    &__matches {
+        grid-area: matches;
+        background-color: hotpink;
+    }
+    &__ratings {
+        grid-area: ratings;
+        background-color: orange;
+    }
+}
+.main-subtitle {
+    @include headline-4();
+}
 //====================================================================================================

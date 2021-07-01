@@ -131,19 +131,35 @@ const slider_matches = new Swiper('.matches__slider', {
   slidesPerView: 6,
   spaceBetween: 1,
    watchOverflow: true,
-   slidesPerColumnFill: 'row',
   // Navigation arrows
   navigation: {
     nextEl: '.matches__arrow-next',
     prevEl: '.matches__arrow-prev'
-  }
+  },
+  breakpoints: {
+	320: {
+		slidesPerView: 1.5,
+		autoHeight: true,
+	},
+	600: {
+		slidesPerView: 3,
+	},
+	820: {
+		slidesPerView: 4,
+	},
+	1000: {
+		slidesPerView: 5,
+	},
+	1200: {
+		slidesPerView: 6,
+	},
+},
 });
 
 const slider_news = new Swiper('.news__slider', {
 	slidesPerView: 2,
 	slidesPerColumn: 2,
 	watchOverflow: true,
-
 	navigation: {
 	  nextEl: '.news__pagination__right',
 	  prevEl: '.news__pagination__left'
@@ -151,7 +167,18 @@ const slider_news = new Swiper('.news__slider', {
 	pagination: {
 		el: ".news__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			slidesPerColumn: 1
+		},
+		1160: {
+			slidesPerView: 2,
+			slidesPerColumn: 2,
+		}
 	}
+
 });
 
 const forecastSwiper = new Swiper('.forecast__slider', {
@@ -165,12 +192,23 @@ const forecastSwiper = new Swiper('.forecast__slider', {
 	pagination: {
 		el: ".forecast__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			slidesPerColumn: 1
+		},
+		1160: {
+			slidesPerView: 2,
+			slidesPerColumn: 2,
+		}
 	}
 });
 
   const streamSwiper = new Swiper('.stream__slider', {
 	slidesPerView: 4,
 	watchOverflow: true,
+	spaceBetween: 16,
 	navigation: {
 	  nextEl: '.stream__pagination__right',
 	  prevEl: '.stream__pagination__left'
@@ -178,12 +216,22 @@ const forecastSwiper = new Swiper('.forecast__slider', {
 	pagination: {
 		el: ".stream__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 2
+		},
+		1160: {
+			slidesPerView: 4,
+			
+		}
 	}
   });
 
 const educationSwiper = new Swiper('.education__slider', {
 	slidesPerView: 4,
 	watchOverflow: true,
+	spaceBetween: 16,
 	navigation: {
 	  nextEl: '.education__pagination__right',
 	  prevEl: '.education__pagination__left'
@@ -191,6 +239,15 @@ const educationSwiper = new Swiper('.education__slider', {
 	pagination: {
 		el: ".education__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 2
+		},
+		1160: {
+			slidesPerView: 4,
+			
+		}
 	}
   });
 
@@ -205,11 +262,24 @@ const educationSwiper = new Swiper('.education__slider', {
 	pagination: {
 		el: ".users__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 2,
+			slidesPerColumn: 1
+		},
+		1160: {
+			slidesPerView: 4,
+			slidesPerColumn: 2,
+			
+		}
 	}
   });
+
   const bookmakersSwiper = new Swiper('.bookmakers__slider', {
 	slidesPerView: 4,
 	watchOverflow: true,
+	spaceBetween: 16,
 	navigation: {
 	  nextEl: '.bookmakers__pagination__right',
 	  prevEl: '.bookmakers__pagination__left'
@@ -217,6 +287,15 @@ const educationSwiper = new Swiper('.education__slider', {
 	pagination: {
 		el: ".bookmakers__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 2
+		},
+		1160: {
+			slidesPerView: 4,
+			
+		}
 	}
   });
 
@@ -234,9 +313,123 @@ const educationSwiper = new Swiper('.education__slider', {
 	}
   });
  
+// //========================================================================================================================================================
+
 
   
-  
+  const bigNews = new Swiper('.news-swiper__slider', {
+	slidesPerView: 1,
+	watchOverflow: true,
+	loop: true,
+	centeredSlides: true,
+
+	// autoplay: {
+	//   delay: 2500,
+	//   disableOnInteraction: false,
+	// },	
+	navigation: {
+		prevEl: '.news-swiper__arrow__prev',
+		nextEl: '.news-swiper__arrow__next',
+	},
+	pagination: {
+		el: ".news-swiper__pagination",
+		clickable: true,
+		renderBullet: function (index, className) {
+		  return '<span class=' + className + '></span>';
+		},
+	}
+
+  });
+
+const allNewsSwiper = new Swiper('.all-news__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.all-news__pagination__right',
+		prevEl: '.all-news__pagination__left'
+	  },
+	  pagination: {
+		  el: ".all-news__pagination",
+ 	  }
+});
+
+const dota2swiper = new Swiper('.dota2__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.dota2__pagination__right',
+		prevEl: '.dota2__pagination__left'
+	  },
+	  pagination: {
+		  el: ".dota2__pagination",
+ 	  }
+});
+
+const csgoSwiper = new Swiper('.csgo__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.csgo__pagination__right',
+		prevEl: '.csgo__pagination__left'
+	  },
+	  pagination: {
+		  el: ".csgo__pagination",
+ 	  }
+});
+console.log(csgoSwiper)
+
+const lolSwiper = new Swiper('.lol__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.lol__pagination__right',
+		prevEl: '.lol__pagination__left'
+	  },
+	  pagination: {
+		  el: ".lol__pagination",
+ 	  }
+});
+const betSwiper = new Swiper('.bet__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.bet__pagination__right',
+		prevEl: '.bet__pagination__left'
+	  },
+	  pagination: {
+		  el: ".bet__pagination",
+ 	  }
+});
+
+const diffSwiper = new Swiper('.diff__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.diff__pagination__right',
+		prevEl: '.diff__pagination__left'
+	  },
+	  pagination: {
+		  el: ".diff__pagination",
+ 	  }
+});
+const gamesportbetSwiper = new Swiper('.gamesport__swiper', {
+	slidesPerView: 3,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.gamesport__pagination__right',
+		prevEl: '.gamesport__pagination__left'
+	  },
+	  pagination: {
+		  el: ".gamesport__pagination",
+ 	  }
+});
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1026,16 +1219,70 @@ animate({
 			Element.prototype.msMatchesSelector;
 	}
 })();
-const searchResult = document.querySelector('.header_search__result');
-searchResult.hidden = false;
+//search ///
+const searchResult = document.querySelector('.search__result');
+const searchCloseButton = document.querySelector('.close-search');
+const searchSearchButton = document.querySelector('.search-search');
+const searchInput = document.querySelector('.search__input');
+
+searchResult.hidden = true;
+// searchCloseButton.hidden = false;
+// searchSearchButton.hidden = true;
+
+searchInput.removeEventListener('keyup',onSearchInputClick);
+searchInput.addEventListener('keyup', onSearchInputClick);
+
+searchCloseButton.removeEventListener('click', oncloseSearch);
+searchCloseButton.addEventListener('click', oncloseSearch);
+
+function oncloseSearch(event) {
+    event.preventDefault();
+    searchResult.hidden = true;
+    searchCloseButton.hidden = true;
+    searchSearchButton.hidden = false;
+    searchInput.value = '';
+}
+function onSearchInputClick(event) {
+    if (searchInput.value !== '') {
+
+        if (searchResult.hidden) {
+            searchResult.hidden = false;
+            searchCloseButton.hidden = false;
+            searchSearchButton.hidden = true;
+        }
+
+    } else {
+        searchResult.hidden = true;
+        searchCloseButton.hidden = true;
+        searchSearchButton.hidden = false;
+    }
+}
 
 document.addEventListener('click', function(event) {
-    var isClickInsideElement = searchResult.contains(event.target);
+    var isClickInsideElement = searchResult.contains(event.target) || searchInput.contains(event.target);
     if (!isClickInsideElement) {
-        
         searchResult.hidden = true;
+        searchCloseButton.hidden = true;
+        searchSearchButton.hidden = false;
     }
 });
+
+var circles = document.querySelectorAll('.details__progress__circle');
+console.log(circles.length);
+
+for (let i =0; i< circles.length; i++) {
+    const circle = circles[i].querySelector('circle');
+    const percent = +circles[i].dataset.percent;
+    var radius = circle.r.baseVal.value;
+    var circumference = radius * 2 * Math.PI;
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = `${circumference}`;
+
+    circle.style.strokeDashoffset = circumference - percent / 100 * circumference;
+ 
+    
+}
+
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');
 if (forms.length > 0) {

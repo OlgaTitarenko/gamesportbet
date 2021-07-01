@@ -79,13 +79,36 @@
   font-size: 16px;
   line-height: 20px;
 }
-
+@mixin headline-1() {
+  font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 40px;
+}
+@mixin headline-4() {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+}
 @mixin headline-5() {
   //	font-family: $font_name;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
+}
+@mixin body() {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+}
+@mixin body-strong() {
+  font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 18px;
 }
 @mixin body-s() {
   //font-family: $font_name;
@@ -109,7 +132,6 @@
   line-height: 18px;
 }
 @mixin caption() {
-  //	font-family: $font_name;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -142,4 +164,22 @@
   border: 2px solid $bg-03;
   box-sizing: border-box;
   border-radius: 4px;
+}
+@mixin text-gradient() {
+  background-color: #FF1B2D;
+		
+		/* Crheate the gradient. */
+		background-image: $button-gradient;
+		
+		/* Set the background size and repeat properties. */
+		background-size: 100%;
+		background-repeat: repeat;
+
+		/* Use the text as a mask for the background. */
+		/* This will show the gradient as a text color rather than element bg. */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent; 
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+
 }
