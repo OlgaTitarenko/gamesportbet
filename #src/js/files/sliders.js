@@ -427,3 +427,16 @@ const gamesportbetSwiper = new Swiper('.gamesport__swiper', {
 		  el: ".gamesport__pagination",
  	  }
 });
+
+const allMatches = new Swiper('.all-matches__swiper', {
+	slidesPerView: 4,
+	watchOverflow: true,
+	spaceBetween: 32,
+	navigation: {
+		nextEl: '.all-matches_pagination__right',
+		prevEl: '.all-matches__pagination__left'
+	  },
+	  pagination: {
+		  el: ".all-matches__pagination",
+ 	  }
+});

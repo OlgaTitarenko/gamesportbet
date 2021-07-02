@@ -43,9 +43,10 @@ document.addEventListener('click', function(event) {
         searchResult.hidden = true;
         searchCloseButton.hidden = true;
         searchSearchButton.hidden = false;
+        searchInput.value = '';
     }
 });
-
+///progress circules
 var circles = document.querySelectorAll('.details__progress__circle');
 console.log(circles.length);
 
@@ -60,4 +61,65 @@ for (let i =0; i< circles.length; i++) {
     circle.style.strokeDashoffset = circumference - percent / 100 * circumference;
  
     
+}
+///////////////
+
+const starRatings = document.querySelectorAll(".stars_rating");
+if (starRatings.length) {
+    initratings();
+};
+
+function initratings() {
+   
+    let ratingActive , ratingValue;
+    for (let i = 0; i<starRatings.length; i++ ) {
+        initrating(starRatings[i]);
+    }
+
+    function initrating(rating) {
+       
+        initRatingValues(rating);
+
+        setAutoRating();
+    
+        if (rating.classList.contains('stars_rating__set')) {
+            setRating(rating);
+        }
+    }
+    function initRatingValues(rating) {
+        ratingActive = rating.querySelector('.stars_rating__active');
+        ratingValue =  rating.querySelector('.stars_rating__value');
+
+        console.log(ratingActive, ratingValue)
+    }
+    function setAutoRating(index = ratingValue.innerHTML) {
+        const ratingActiveWidth = index / 0.05;
+        ratingActive.style.width = `${ratingActiveWidth}%`;
+    }
+    function setRating(rating) {
+        console.log(rating);
+        const ratingInputs = rating.querySelectorAll('.stars_rating__item');
+
+        for (let i = 0; i<ratingInputs.length; i++) {
+            ratingInputs[i].addEventListener('mouseenter', function (e) {
+               
+              
+                initRatingValues(rating);
+                setAutoRating(ratingInputs[i].value);
+            });
+            ratingInputs[i].addEventListener('mouseleave', function (e) {
+               
+                setAutoRating();
+            });
+            ratingInputs[i].addEventListener('click', function (e) {
+               
+                initRatingValues(rating);
+                //send to server
+
+                //if not
+                ratingValue.innerHTML = i + 1;
+                setAutoRating();
+            })
+        }
+    }
 }

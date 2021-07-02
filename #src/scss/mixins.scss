@@ -98,6 +98,11 @@ line-height: 40px;
   font-size: 18px;
   line-height: 24px;
 }
+@mixin headline-6 {
+  font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+}
 @mixin body() {
   font-style: normal;
   font-weight: normal;
@@ -137,6 +142,12 @@ line-height: 18px;
   font-size: 12px;
   line-height: 16px;
 }
+@mixin caption-s() {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+}
 @mixin button() {
   font-family: Montserrat;
   font-style: normal;
@@ -149,10 +160,7 @@ line-height: 18px;
   font-feature-settings: "pnum" on, "lnum" on;
 }
 @mixin element-bg() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 16px;
+
 
   background: linear-gradient(
     180deg,
@@ -182,4 +190,10 @@ line-height: 18px;
 		-moz-background-clip: text;
 		-moz-text-fill-color: transparent;
 
+}
+@mixin overline() {
+  font-style: normal;
+font-weight: 600;
+font-size: 10px;
+line-height: 14px;
 }

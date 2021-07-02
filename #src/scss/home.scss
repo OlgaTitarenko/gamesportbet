@@ -1,37 +1,59 @@
 //====================================================================================================
 .page {
+    max-width: 1440px;
+    margin: 0 auto;
     &__content {
         width: 100%;
         padding: 32px;
         display: grid;
-        grid-template-columns: 1024px 320px;
+        grid-template-columns: 71% 320px;
         grid-template-rows: auto;
         column-gap: 32px;
         row-gap: 32px;
         grid-template-areas: 
-            "news sidebar"
+            "news topAnalysts"
+            "matches-tabs matches-of-the-day"
+            "banner social-links"
+            "top-streams top-bk"
             "matches matches"
             "ratings ratings"
         ;
     }
     &__news {
         grid-area: news;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__analysts {
+        grid-area: topAnalysts;
+    }
+    &__matches-tabs {
+        grid-area: matches-tabs;
+    }
+    &__match-of-the-day {
+        grid-area: matches-of-the-day;
+    }
+    &__banner {
+        grid-area: banner;
        
     }
-    &__sidebar {
-        grid-area: sidebar;
-        background-color: greenyellow;
+    &__social-link {
+        grid-area: social-links;
+    }
+    &__top-streams {
+        grid-area: top-streams;
+    }
+    &__top-bk {
+        grid-area: top-bk;
     }
     &__matches {
         grid-area: matches;
-        background-color: hotpink;
     }
     &__ratings {
         grid-area: ratings;
         background-color: orange;
     }
 }
-.main-subtitle {
-    @include headline-4();
-}
+
 //====================================================================================================
