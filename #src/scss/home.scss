@@ -1,12 +1,13 @@
 //====================================================================================================
 .page {
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     &__content {
         width: 100%;
         padding: 32px;
         display: grid;
-        grid-template-columns: 71% 320px;
+        grid-template-columns: calc(100% - 352px) 320px;
         grid-template-rows: auto;
         column-gap: 32px;
         row-gap: 32px;
@@ -36,7 +37,8 @@
     }
     &__banner {
         grid-area: banner;
-       
+        display: flex;
+        align-items: center;
     }
     &__social-link {
         grid-area: social-links;
