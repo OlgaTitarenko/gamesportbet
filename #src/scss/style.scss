@@ -36,9 +36,13 @@ $bg-01: #0F1526;
 $bg-02: #131A2C;
 $bg-03: #171F32;
 $bg-04: #3B5C7B ;
+$bg-05: #6C89A9;
+$bg-06: #ABC2DB;
 $highlight-bg:#280716;
 $semidark-00: #0F1526;
 $button-gradient: linear-gradient(94.6deg, #FF1B2D 2.36%, #DF006B 98.71%);
+$element-bg-hover: linear-gradient(180deg, #030E1B 0%, #041324 100%);
+$highlight-bg: #280716;
 
 //text colors
 $text-white: #fff;
@@ -113,6 +117,8 @@ body {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 @import "news";
 @import "analysts";
+@import "ratings";
+@import "history";
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
 	flex: 1 1 auto;

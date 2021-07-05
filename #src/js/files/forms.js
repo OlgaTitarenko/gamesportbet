@@ -348,6 +348,7 @@ let inputs = document.querySelectorAll('input[data-value],textarea[data-value]')
 inputs_init(inputs);
 
 function inputs_init(inputs) {
+	
 	if (inputs.length > 0) {
 		for (let index = 0; index < inputs.length; index++) {
 			const input = inputs[index];
@@ -394,6 +395,30 @@ function inputs_init(inputs) {
 				if (input.classList.contains('_digital')) {
 					input.classList.add('_mask');
 					Inputmask("9{1,}", {
+						"placeholder": '',
+						clearIncomplete: true,
+						clearMaskOnLostFocus: true,
+						onincomplete: function () {
+							input_clear_mask(input, input_g_value);
+						}
+					}).mask(input);
+				}
+				if (input.classList.contains('_price')) {
+					
+					input.classList.add('_mask');
+					Inputmask("9{1,} ₽", {
+						"placeholder": '',
+						clearIncomplete: true,
+						clearMaskOnLostFocus: true,
+						onincomplete: function () {
+							input_clear_mask(input, input_g_value);
+						}
+					}).mask(input);
+				}
+				if (input.classList.contains('_persent')) {
+					
+					input.classList.add('_mask');
+					Inputmask("9{1,} %", {
 						"placeholder": '',
 						clearIncomplete: true,
 						clearMaskOnLostFocus: true,

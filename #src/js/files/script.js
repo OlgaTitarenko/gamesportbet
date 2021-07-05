@@ -48,7 +48,6 @@ document.addEventListener('click', function(event) {
 });
 ///progress circules
 var circles = document.querySelectorAll('.details__progress__circle');
-console.log(circles.length);
 
 for (let i =0; i< circles.length; i++) {
     const circle = circles[i].querySelector('circle');
@@ -90,14 +89,14 @@ function initratings() {
         ratingActive = rating.querySelector('.stars_rating__active');
         ratingValue =  rating.querySelector('.stars_rating__value');
 
-        console.log(ratingActive, ratingValue)
+       
     }
     function setAutoRating(index = ratingValue.innerHTML) {
         const ratingActiveWidth = index / 0.05;
         ratingActive.style.width = `${ratingActiveWidth}%`;
     }
     function setRating(rating) {
-        console.log(rating);
+       
         const ratingInputs = rating.querySelectorAll('.stars_rating__item');
 
         for (let i = 0; i<ratingInputs.length; i++) {
@@ -122,4 +121,29 @@ function initratings() {
             })
         }
     }
+}
+
+/////////////
+//Tabs
+let teamTabs = document.querySelectorAll("._team-tabs");
+
+for (let index = 0; index < teamTabs.length; index++) {
+	let tab = teamTabs[index];
+	let tabs_items = tab.querySelectorAll("._team-tabs-item");
+	let tabs_blocks = tab.querySelectorAll("._team-tabs-block");
+   
+	for (let index = 0; index < tabs_items.length; index++) {
+		let tabs_item = tabs_items[index];
+		tabs_item.addEventListener("click", function (e) {
+			for (let index = 0; index < tabs_items.length; index++) {
+				let tabs_item = tabs_items[index];
+				
+				tabs_item.classList.remove('_active');
+				tabs_blocks[index].classList.remove('_active');
+			}
+			tabs_item.classList.add('_active');
+			tabs_blocks[index].classList.add('_active');
+			e.preventDefault();
+		});
+	}
 }

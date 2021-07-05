@@ -122,36 +122,42 @@ let slider_about = new Swiper('.about__slider', {
 	//},
 });
 
+
+const mySliders = {};
+
 const slider_matches = new Swiper('.matches__slider', {
 	  // Optional parameters
   //  loop: true,
   slidesPerView: 6,
   spaceBetween: 1,
    watchOverflow: true,
+   updateOnWindowResize:true,
   // Navigation arrows
   navigation: {
     nextEl: '.matches__arrow-next',
     prevEl: '.matches__arrow-prev'
   },
   breakpoints: {
-	320: {
-		slidesPerView: 1.5,
-		autoHeight: true,
+	1200: {
+		slidesPerView: 6,
 	},
-	600: {
-		slidesPerView: 3,
+	1160: {
+		slidesPerView: 5,
 	},
 	820: {
 		slidesPerView: 4,
 	},
-	1000: {
-		slidesPerView: 5,
+	600: {
+		slidesPerView: 3,
 	},
-	1200: {
-		slidesPerView: 6,
+	320: {
+		slidesPerView: 1.5,
+		autoHeight: true,
 	},
-},
+	
+  },
 });
+mySliders['matches'] = slider_matches;
 
 const slider_news = new Swiper('.news__slider', {
 	slidesPerView: 2,
@@ -166,17 +172,19 @@ const slider_news = new Swiper('.news__slider', {
 		type: "fraction",
 	},
 	breakpoints: {
+		1160: {
+			slidesPerView: 2,
+			slidesPerColumn: 2,
+		},
 		320: {
 			slidesPerView: 1,
 			slidesPerColumn: 1
 		},
-		1160: {
-			slidesPerView: 2,
-			slidesPerColumn: 2,
-		}
+		
 	}
 
 });
+mySliders['news'] = slider_news;
 
 const forecastSwiper = new Swiper('.forecast__slider', {
 	slidesPerView: 2,
@@ -191,16 +199,18 @@ const forecastSwiper = new Swiper('.forecast__slider', {
 		type: "fraction",
 	},
 	breakpoints: {
+		1160: {
+			slidesPerView: 2,
+			slidesPerColumn: 2,
+		},
 		320: {
 			slidesPerView: 1,
 			slidesPerColumn: 1
 		},
-		1160: {
-			slidesPerView: 2,
-			slidesPerColumn: 2,
-		}
+		
 	}
 });
+mySliders['forecast'] = forecastSwiper;
 
   const streamSwiper = new Swiper('.stream__slider', {
 	slidesPerView: 4,
@@ -215,15 +225,17 @@ const forecastSwiper = new Swiper('.forecast__slider', {
 		type: "fraction",
 	},
 	breakpoints: {
-		320: {
-			slidesPerView: 2
-		},
 		1160: {
 			slidesPerView: 4,
 			
-		}
+		},
+		320: {
+			slidesPerView: 2
+		},
+		
 	}
   });
+mySliders['stream'] = streamSwiper;
 
 const educationSwiper = new Swiper('.education__slider', {
 	slidesPerView: 4,
@@ -238,15 +250,17 @@ const educationSwiper = new Swiper('.education__slider', {
 		type: "fraction",
 	},
 	breakpoints: {
-		320: {
-			slidesPerView: 2
-		},
 		1160: {
 			slidesPerView: 4,
 			
-		}
+		},
+		320: {
+			slidesPerView: 2
+		},
+		
 	}
   });
+  mySliders['education'] = educationSwiper;
 
   const usersSwiper = new Swiper('.users__slider', {
 	slidesPerView: 4,
@@ -261,17 +275,19 @@ const educationSwiper = new Swiper('.education__slider', {
 		type: "fraction",
 	},
 	breakpoints: {
-		320: {
-			slidesPerView: 2,
-			slidesPerColumn: 1
-		},
 		1160: {
 			slidesPerView: 4,
 			slidesPerColumn: 2,
 			
-		}
+		},
+		320: {
+			slidesPerView: 2,
+			slidesPerColumn: 1
+		},
+		
 	}
   });
+mySliders['users'] = usersSwiper;
 
   const bookmakersSwiper = new Swiper('.bookmakers__slider', {
 	slidesPerView: 4,
@@ -286,15 +302,17 @@ const educationSwiper = new Swiper('.education__slider', {
 		type: "fraction",
 	},
 	breakpoints: {
-		320: {
-			slidesPerView: 2
-		},
 		1160: {
 			slidesPerView: 4,
 			
-		}
+		},
+		320: {
+			slidesPerView: 2
+		},
+		
 	}
   });
+  mySliders['bookmakers'] = bookmakersSwiper;
 
   const commentsSwiper = new Swiper('.comments__slider', {
 	slidesPerView: 2,
@@ -307,9 +325,17 @@ const educationSwiper = new Swiper('.education__slider', {
 	pagination: {
 		el: ".comments__pagination__numbers",
 		type: "fraction",
+	},
+	breakpoints: {
+		1160: {
+			slidesPerView: 2,
+			slidesPerColumn: 2,
+			
+		},
+			
 	}
   });
- 
+ mySliders['comments'] = commentsSwiper;
 // //========================================================================================================================================================
 
 
@@ -319,7 +345,7 @@ const educationSwiper = new Swiper('.education__slider', {
 	watchOverflow: true,
 	loop: true,
 	centeredSlides: true,
-
+	updateOnWindowResize:true,
 	// autoplay: {
 	//   delay: 2500,
 	//   disableOnInteraction: false,
@@ -337,106 +363,69 @@ const educationSwiper = new Swiper('.education__slider', {
 	}
 
   });
+  mySliders['news-swiper'] = bigNews;
 
-const allNewsSwiper = new Swiper('.all-news__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.all-news__pagination__right',
-		prevEl: '.all-news__pagination__left'
-	  },
-	  pagination: {
-		  el: ".all-news__pagination",
- 	  }
-});
+  function createSimpleSlider(name, slidesView) {
+	
+	let slider = new Swiper(`.${name}__swiper`, {
+		slidesPerView: slidesView,
+		watchOverflow: true,
+		observer: true,
+		observeParents: true,
+		spaceBetween: 32,
+		 updateOnWindowResize:true,
+		navigation: {
+			nextEl: `.${name}__pagination__right`,
+			prevEl: `.${name}__pagination__left`
+		  },
+		pagination: {
+			  el: `.${name}__pagination`
+		},
+		breakpoints: {
+			1200: {
+				slidesPerView: slidesView,
+			},
+			1160: {
+				slidesPerView: slidesView - 1,
+			},
+			820: {
+				slidesPerView: slidesView - 2,
+			}
+						
+		},
+		
+	});
+	mySliders[name] = slider;
+	
+}
+createSimpleSlider('all-news', 3);
+createSimpleSlider('dota2', 3);
+createSimpleSlider('csgo',3);
+createSimpleSlider('lol', 3);
+createSimpleSlider('bet',3);
+createSimpleSlider('diff',3);
+createSimpleSlider('gamesport',3);
 
-const dota2swiper = new Swiper('.dota2__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.dota2__pagination__right',
-		prevEl: '.dota2__pagination__left'
-	  },
-	  pagination: {
-		  el: ".dota2__pagination",
- 	  }
-});
+createSimpleSlider('all-matches', 4);
+createSimpleSlider('gamesport-forecast', 4);
+createSimpleSlider('analytics-forecast',4);
+createSimpleSlider('ai-forecast',4);
+createSimpleSlider('free-forecast', 4);
+createSimpleSlider('history-forecast', 4);
 
-const csgoSwiper = new Swiper('.csgo__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.csgo__pagination__right',
-		prevEl: '.csgo__pagination__left'
-	  },
-	  pagination: {
-		  el: ".csgo__pagination",
- 	  }
-});
-console.log(csgoSwiper)
 
-const lolSwiper = new Swiper('.lol__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.lol__pagination__right',
-		prevEl: '.lol__pagination__left'
-	  },
-	  pagination: {
-		  el: ".lol__pagination",
- 	  }
-});
-const betSwiper = new Swiper('.bet__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.bet__pagination__right',
-		prevEl: '.bet__pagination__left'
-	  },
-	  pagination: {
-		  el: ".bet__pagination",
- 	  }
-});
+function updateSlider(name) {
+	
+	mySliders[name].update();
+}
+const tabsNav = document.querySelectorAll('.tabs-block__item');
 
-const diffSwiper = new Swiper('.diff__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.diff__pagination__right',
-		prevEl: '.diff__pagination__left'
-	  },
-	  pagination: {
-		  el: ".diff__pagination",
- 	  }
-});
-const gamesportbetSwiper = new Swiper('.gamesport__swiper', {
-	slidesPerView: 3,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.gamesport__pagination__right',
-		prevEl: '.gamesport__pagination__left'
-	  },
-	  pagination: {
-		  el: ".gamesport__pagination",
- 	  }
-});
+for (let i =0; i< tabsNav.length; i++) {
+	if (tabsNav[i].dataset.slider) {
+		const tab = tabsNav[i];
+		
+		const sliderName = tab.dataset.slider;
+		tab.addEventListener('click', () => { updateSlider(sliderName)})
+	}
 
-const allMatches = new Swiper('.all-matches__swiper', {
-	slidesPerView: 4,
-	watchOverflow: true,
-	spaceBetween: 32,
-	navigation: {
-		nextEl: '.all-matches_pagination__right',
-		prevEl: '.all-matches__pagination__left'
-	  },
-	  pagination: {
-		  el: ".all-matches__pagination",
- 	  }
-});
+}

@@ -38,7 +38,7 @@
      }
       
     &__item {
-       
+       margin-bottom: 16px;
         @include element-bg();
         counter-increment: my-awesome-counter;
         display: flex;
@@ -71,32 +71,7 @@
     &__name {
         padding-bottom: 8px;
     }
-    &__details {
-        color: $default-icon;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        > div {
-            padding-right: 8px;
-        }
-    }
-    &__rate {
-        @include caption();
-        display: flex;
-        align-items: center;
-
-        img {
-            vertical-align: middle;
-            padding-right: 4px;
-        }
-        
-        &_up {
-            color: $state_success;
-        }
-        &_down {
-            color: $state_fail;
-        }
-    }
+ 
     &__item:hover {
         color: $link;
         .top-analysts__star {
@@ -125,12 +100,17 @@
         align-items: center;
         cursor: pointer;
         padding: 8px 16px;
+        margin-bottom: 16px;
     }
     ul {
         height: 100%;
     }
     &__img {
         width: 80px;
+        img {
+            object-fit: contain;
+            width: 100%;
+        }
     }
     &__body {
         display: flex;
@@ -138,23 +118,7 @@
         justify-content: space-between;
         align-items: center;
     }
-    &__rate {
-        @include caption();
-        display: flex;
-        align-items: center;
-
-        img {
-            vertical-align: middle;
-            padding-right: 4px;
-        }
-        
-        &_up {
-            color: $state_success;
-        }
-        &_down {
-            color: $state_fail;
-        }
-    }
+   
     &__button {
         width: 100%;
         .button {

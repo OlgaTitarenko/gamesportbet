@@ -12,49 +12,54 @@
         column-gap: 32px;
         row-gap: 32px;
         grid-template-areas: 
-            "news topAnalysts"
-            "matches-tabs matches-of-the-day"
-            "banner social-links"
-            "top-streams top-bk"
+            "main sidebar"
+            
             "matches matches"
             "ratings ratings"
         ;
     }
     &__news {
-        grid-area: news;
+        //grid-area: news;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        padding-bottom: 32px;
     }
     &__analysts {
-        grid-area: topAnalysts;
+        
+        padding-bottom: 32px;
     }
     &__matches-tabs {
         grid-area: matches-tabs;
+      padding-bottom: 32px;
     }
     &__match-of-the-day {
         grid-area: matches-of-the-day;
+        padding-bottom: 32px;
     }
     &__banner {
         grid-area: banner;
         display: flex;
         align-items: center;
+        padding-bottom: 32px;
     }
     &__social-link {
         grid-area: social-links;
+        padding-bottom: 32px;
     }
     &__top-streams {
         grid-area: top-streams;
+       
     }
     &__top-bk {
         grid-area: top-bk;
+
     }
     &__matches {
         grid-area: matches;
     }
     &__ratings {
         grid-area: ratings;
-        background-color: orange;
+        
     }
 }
 

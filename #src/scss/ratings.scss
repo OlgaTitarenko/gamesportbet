@@ -1,0 +1,164 @@
+.ratings {
+    padding-bottom: 8px;
+    &__menu {
+        @include element-bg();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+
+        &__tabs {
+            display: flex;
+
+            h2 {
+                padding-right: 18px;
+            }
+        }
+        &__game {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                @include body-s()
+            }
+            >div {
+                display: flex;
+                align-items: center;
+            }
+             
+            &-item  {
+                padding: 6px;
+                opacity: 0.5;
+                border-radius: 4px;
+
+                &_active {
+                    opacity: 1;
+                    img {
+                        border: 2px solid $ui-element;
+                    }
+                }
+            }
+        }
+    }
+    .team {
+        display: flex;
+        .main-subtitle_headline-5 {
+            padding-bottom: 8px;
+        }
+        ol {
+            flex: 0 0 50%;
+            list-style: none;
+            counter-reset: team-counter;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            padding: 8px 16px 8px 0;
+        }
+        &__item {
+            background: $element-bg-hover;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            counter-increment: team-counter;
+
+            &-name {
+                @include body-strong();
+                display: flex;
+                align-items: center;
+                padding: 8px 16px;
+                border-bottom: 1px solid $state_success;
+                width: 100%;
+
+               
+                img {
+                    padding-right: 16px;
+                    width: 40px;
+                    object-fit: contain;
+                }
+                &_bradius {
+                    img {
+                        border-radius: 4px;
+                    }
+                }
+            }
+            &-info {
+                display: flex;
+                align-items: center;
+                padding: 8px 16px;
+                border-bottom: 1px solid $state_fail;
+                flex: 0 0 50%;
+ 
+                &_flag {
+                    flex: 0 0 10%;
+                    min-width: 20px;
+                }
+                &_prize {
+                    flex: 0 0 50%;
+                    min-width: 80px;
+                    text-align: center;
+                    span {
+                        @include body-xs();
+                    }
+                }
+                &_details {
+                    flex: 0 0 30%;
+                    min-width: 46px;
+                    
+                }
+                &_rate {
+                    flex: 0 0 10%;
+                    min-width: 17px;
+                    text-align: center;
+                }
+                &_small {
+                   
+                    .team__item-info_prize {
+                        flex: 0 0 60%;
+                    }
+                    .team__item-info_details {
+                        flex: 0 0 35%;
+                    }
+                }
+
+            }
+            &._active  {
+                background: $bg-03;
+            }
+            &_count {
+                .team__item-name {
+                    &::before{
+                        content: counter(team-counter);
+                        @include body-s();
+                        padding-right: 16px;
+                    }
+                }
+            }
+            &:hover {
+                .team__item-name {
+                    color: $link;
+
+                    &::before {
+                        color: $text-white;
+                    }
+                }
+            }
+        }
+        &__players {
+            flex: 0 0 50%;
+            padding: 8px 0 8px 16px;
+          
+        }
+    }
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__middle {
+            max-width: 320px;
+            width: 100%;
+        }
+    }
+}

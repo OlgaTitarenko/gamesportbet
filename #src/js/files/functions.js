@@ -163,6 +163,7 @@ for (let index = 0; index < tabs.length; index++) {
 		tabs_item.addEventListener("click", function (e) {
 			for (let index = 0; index < tabs_items.length; index++) {
 				let tabs_item = tabs_items[index];
+			
 				tabs_item.classList.remove('_active');
 				tabs_blocks[index].classList.remove('_active');
 			}
@@ -192,6 +193,7 @@ if (spollersArray.length > 0) {
 	const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
 		return !item.dataset.spollers.split(",")[0];
 	});
+
 	// Инициализация обычных слойлеров
 	if (spollersRegular.length > 0) {
 		initSpollers(spollersRegular);
@@ -247,9 +249,10 @@ if (spollersArray.length > 0) {
 	function initSpollers(spollersArray, matchMedia = false) {
 		spollersArray.forEach(spollersBlock => {
 			spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+			console.log(spollersBlock)
 			if (matchMedia.matches || !matchMedia) {
 				spollersBlock.classList.add('_init');
-				initSpollerBody(spollersBlock);
+				initSpollerBody(spollersBlock, false);
 				spollersBlock.addEventListener("click", setSpollerAction);
 			} else {
 				spollersBlock.classList.remove('_init');
@@ -261,6 +264,7 @@ if (spollersArray.length > 0) {
 	// Работа с контентом
 	function initSpollerBody(spollersBlock, hideSpollerBody = true) {
 		const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]');
+		console.log(spollerTitles)
 		if (spollerTitles.length > 0) {
 			spollerTitles.forEach(spollerTitle => {
 				if (hideSpollerBody) {

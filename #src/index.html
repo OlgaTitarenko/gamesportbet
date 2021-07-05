@@ -8,152 +8,147 @@
 			@@include('_header.html',{})
 			<main class="page">
 				<div class="page__content">
-					<div class="page__news">
-						@@include('_news.html', {})
+					<div class="page__main">
+						<div class="page__news">
+							@@include('_news.html', {})
+						</div>
+						<div class="page__matches-tabs">
+							@@include('_matches-tabs.html', {})
+						</div>
+						<div class="page__banner">
+							<div class="gorizontal-banner-block">
+								<img src="./img/news/image40.png" alt="" />
+							  </div>
+						</div>
+						<div class="page__top-streams">
+							@@include('_top-streams.html',{})
+						</div>
 
 					</div>
-					<div class="page__analysts">
-						@@include('_analysts.html', {})
-					</div>
-
-					<div class="page__matches-tabs">
-						@@include('_matches-tabs.html', {})
-					</div>
-					<div class="page__match-of-the-day">
-						<div class="match-day">
-							<div class="match-day__title">
-								<h2>
-									Матч дня
-								</h2>
-							</div>
-							<div class="match-day__season">
-								<img src="./img/matches/Group.svg" alt="">
-								<span> OGA Dota PIT Season 4</span>
-							</div>
-							<div class="match-day__rate">
-								<form action="#" class="form">
-									<div class="stars_rating stars_rating__set">
-										<div class="stars_rating__active"></div>
-										<div class="stars_rating__items">
-											<input  class="stars_rating__item" name="stars_rating" type="radio" value="5">
-											<input  class="stars_rating__item" name="stars_rating" type="radio" value="4">
-											<input class="stars_rating__item" name="stars_rating" type="radio" value="3">
-											<input class="stars_rating__item" name="stars_rating" type="radio" value="2">
-											<input class="stars_rating__item" name="stars_rating" type="radio" value="1">
-	
+					<div class="page__sidebar">
+						<div class="page__analysts">
+							@@include('_analysts.html', {})
+						</div>
+						<div class="page__match-of-the-day">
+							<div class="match-day">
+								<div class="match-day__title">
+									<h2>
+										Матч дня
+									</h2>
+								</div>
+								<div class="match-day__season">
+									<img src="./img/logo/dota2.svg" alt="">
+									<span> OGA Dota PIT Season 4</span>
+								</div>
+								<div class="match-day__rate">
+									<form action="#" class="form">
+										<div class="stars_rating stars_rating__set">
+											<div class="stars_rating__active"></div>
+											<div class="stars_rating__items">
+												<input  class="stars_rating__item" name="stars_rating" type="radio" value="5">
+												<input  class="stars_rating__item" name="stars_rating" type="radio" value="4">
+												<input class="stars_rating__item" name="stars_rating" type="radio" value="3">
+												<input class="stars_rating__item" name="stars_rating" type="radio" value="2">
+												<input class="stars_rating__item" name="stars_rating" type="radio" value="1">
+		
+											</div>
+											<div class="stars_rating__value stars_rating__value_hide">0</div>
+											
 										</div>
-										<div class="stars_rating__value stars_rating__value_hide">0</div>
+									</form>
+								</div>
+								
+								<div class="match-day__subtitle">
+									<p>Сетка, Во7</p>
+								</div>
+								<div>
+									<div class="match-day__body">
+										<img src="./img/matches/image30.png" alt="">
+										<div class="match-day__time">
+											<span>до начала</span>
+											<p>06:05:32</p>
+										</div>
+										<img src="./img/matches/image31.png" alt="">
+									</div>
+									<div class="match-day__names">
+										<div class="match-day__name_left">
+											<h3>
+												Virtus.pro
+											</h3>
+											<span class="match-prognoze">
+												1.45
+											</span>
+										</div>
+										<div class="match-day__name_right">
+											<h3>
+												Team Aster
+											</h3>
+											<span class="match-prognoze">2.23</span>
+										</div>
 										
 									</div>
-								</form>
-							</div>
-							
-							<div class="match-day__subtitle">
-								<p>Сетка, Во7</p>
-							</div>
-							<div>
-								<div class="match-day__body">
-									<img src="./img/matches/image30.png" alt="">
-									<div class="match-day__time">
-										<span>до начала</span>
-										<p>06:05:32</p>
-									</div>
-									<img src="./img/matches/image31.png" alt="">
 								</div>
-								<div class="match-day__names">
-									<div class="match-day__name_left">
-										<h3>
-											Virtus.pro
-										</h3>
-										<span>
-											1.45
-										</span>
-									</div>
-									<div class="match-day__name_right">
-										<h3>
-											Team Aster
-										</h3>
-										<span>2.23</span>
-									</div>
+								
+								<div class="match-day__button">
+									
+										<button class="button button__border">
+											Создать прогноз 
+										</button>
+									
 									
 								</div>
-							</div>
-							
-							<div class="match-day__button">
-								
-									<button class="button button__border">
-										Создать прогноз 
+								<div class="match-day__button">
+									<button class="button">
+										Получить прогноз
 									</button>
-								
-								
-							</div>
-							<div class="match-day__button">
-								<button class="button">
-									Получить прогноз
-								</button>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="page__banner">
-						<div class="gorizontal-banner-block">
-							<img src="./img/news/image40.png" alt="" />
-						  </div>
-					</div>
-					<div class="page__social-link">
-						<div class="social-links">
-							<div class="social-links__title">
-								<h2>
-									Подписывайтесь
-								</h2>
-							</div>
-							<div class="social-links__buttons">
-								<button class="social-button">
-									<img src="./img/icons/vk.svg" alt="">
-								</button>
-								<button class="social-button">
-									<img src="./img/icons/inst.svg" alt="">
-								</button>
-								<button class="social-button">
-									<img src="./img/icons/telegram.svg" alt="">
-								</button>
-								<button class="social-button">
-									<img src="./img/icons/fb.svg" alt="">
-								</button>
-								<button class="social-button">
-									<img src="./img/icons/yt.svg" alt="">
-								</button>
-							</div>
-							<div class="social-links_subtitle">
-								<span> новости, конкурсы, акции </span>
+								</div>
+	
 							</div>
 						</div>
+						<div class="page__social-link">
+							<div class="social-links">
+								<div class="social-links__title">
+									<h2>
+										Подписывайтесь
+									</h2>
+								</div>
+								<div class="social-links__buttons">
+									<button class="social-button">
+										<img src="./img/icons/vk.svg" alt="">
+									</button>
+									<button class="social-button">
+										<img src="./img/icons/inst.svg" alt="">
+									</button>
+									<button class="social-button">
+										<img src="./img/icons/telegram.svg" alt="">
+									</button>
+									<button class="social-button">
+										<img src="./img/icons/fb.svg" alt="">
+									</button>
+									<button class="social-button">
+										<img src="./img/icons/yt.svg" alt="">
+									</button>
+								</div>
+								<div class="social-links_subtitle">
+									<span> новости, конкурсы, акции </span>
+								</div>
+							</div>
+						</div>
+						<div class="page__top-bk">
+							@@include('_top-bk.html',{})
+						</div>
 					</div>
-					<div class="page__top-streams">
-						@@include('_top-streams.html',{})
-					</div>
-					<div class="page__top-bk">
-						@@include('_top-bk.html',{})
-					</div>
+					
+				
 					<div class="page__matches">
 						@@include('_matches-and-forecast.html', {})
 					</div>
 					<div class="page__ratings">
-page__ratings
+						@@include('_ratings.html',{})
 					</div>
 				</div>
 
-
-
-
 				
-				  
-				 
-
-
-
-
 			</main>
 			@@include('_footer.html',{})
 		</div>

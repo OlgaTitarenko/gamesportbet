@@ -36,12 +36,16 @@
 	// .select__item
 	&__item {
 		position: relative;
+
+		
+		box-sizing: border-box;
+		border-radius: 4px;
 	}
 	// .select__title
 	&__title {
-		color: #000;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		color: $text-white;
+		background: $bg-02;
+		border: 2px solid $bg-01;
 		cursor: pointer;
 		border-radius: 4px;
 		@media (max-width: $md2+px) {
@@ -80,15 +84,14 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
+		color: $text-white;
+		background: $bg-02;
+		border: 2px solid $bg-01;
 		position: absolute;
 		top: 29px;
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
-		border-top: 0;
-		border: 1px solid #d9d9d9;
 		border-top: 0;
 		font-size: 14px;
 		padding: 10px 0px 5px 0px;
@@ -99,21 +102,20 @@
 	// .select__option
 	&__option {
 		cursor: pointer;
-		padding: 5px 15px;
+		background: $bg-03;
+		border: 2px solid $bg-03;
+		padding: 10px 16px;
 		margin: 0px 0px 0px 0px;
 		@media (min-width: 992px) {
 			&:hover {
-				background: #d9d9d9;
+				background: $bg-02;
+				border-color: $bg-01;
 			}
 		}
 	}
 	&._active {
 		z-index: 5;
-		.select__value {
-			&:before {
-				transform: rotate(-180deg);
-			}
-		}
+		
 		.select__options {
 			display: block;
 		}
@@ -138,15 +140,25 @@ textarea {
 	display: block;
     @include subtitle();
     background-color: $bg-02;
+	border: 2px solid $bg-01;
     box-sizing: border-box;
     border-radius: 4px;
     height: 100%;
     padding: 10px 16px;
     border: 0;
     color: $text-white;
+	&:hover {
+		border-color: $bg-04;
+	}
 	&._focus {
+		border-color: $bg-06;
 	}
 	&._error {
+		border-color: $state_fail;
+	}
+	&._disable {
+		opacity: 0.5;
+		cursor: none;
 	}
 }
 textarea.input {
@@ -221,6 +233,7 @@ textarea.input {
 		position: relative;
 		cursor: pointer;
 		&._error {
+			color: $state_fail;
 		}
 	}
 	// .options__input

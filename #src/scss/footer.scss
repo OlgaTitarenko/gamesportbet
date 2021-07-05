@@ -1,5 +1,109 @@
-footer{}
+footer{
+
+}
+//====================================================================================================
+.footer-main{
+    padding: 32px;
+    background: $element-bg-hover;
+    display: flex;
+    >div {
+        width: 100%;
+    }
+    &__menu-block {
+        display: flex;
+        &_vertical {
+            height: 100%;
+        }       
+    }
+    &__details {
+        padding-top: 60px;
+    }
+    &__menu {
+        flex: 0 0 25%;
+       
+    }
+    &__sponsors {
+        display: flex;
+        align-items: center;
+    }
+    &__sponsor_item {
+        display: flex;
+        padding-right: 32px;
+        align-items: center;
+        max-width: 320px;
+
+        img {
+            padding-right: 16px;
+        }
+    }
+    &__rules {
+        @include body-s();
+        color: $bg-06;
+    }
+    &__second {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+            @include body-s();
+        }
+    }
+    &__horizontal-block {
+        display: flex;
+       .menu {
+          width: 50%;
+       }
+       .menu:first-child {
+          
+           padding-left: 32px;
+       }
+       .social-links__buttons {
+           width: 60%;
+           justify-content: flex-start;
+       }
+    }
+    
+    &__documents {
+        display: flex;
+        align-items: center;
+        >div {
+            display: flex;
+            margin-right: 8px;
+        }
+        img {
+            margin-right: 16px;
+        }
+       
+    }
+    &__documents-text{
+        justify-content: center;
+    }
+    &__qr-code {
+        display: flex;
+        align-items: center;
+        img {
+            width: 130px;
+            object-fit: contain;
+            margin-right: 16px;
+        }
+    }
+}
 //====================================================================================================
 
-//====================================================================================================
+@media (max-width: 1180px) {
+    .footer-main {
+       flex-direction: column-reverse;
 
+       &__second {
+           padding-bottom: 32px;
+       }
+       &__horizontal-block {
+           padding-bottom: 16px;
+
+           .menu:first-child {
+                padding-left: 0;
+            }
+       } 
+    }
+}

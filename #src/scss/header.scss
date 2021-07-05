@@ -270,13 +270,13 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 8px;
+  padding: 4px;
 
   &__item {
     display: inline-block;
     background-color: $bg-03;
     border-radius: 32px;
-    margin: 0 4px;
+    margin: 4px;
     padding: 4px 12px;
     color: $default-icon;
     cursor: pointer;
@@ -302,12 +302,12 @@
     align-items: baseline;
     justify-content: space-between;
     padding: 0 16px;
-    //	margin-bottom: 18px;
+   
 
     h2 {
       @include headline-5();
+      margin-right: 16px;
       span {
-        margin-left: 16px;
         @include body-s();
         opacity: 0.5;
       }
@@ -320,7 +320,7 @@
     &__numbers {
       @include body-s();
       opacity: 0.5;
-      margin-right: 25px;
+      margin-right: 16px;
     }
     &__right {
       cursor: pointer;
@@ -329,7 +329,7 @@
       }
     }
     &__left {
-      margin-right: 25px;
+      margin-right: 16px;
       cursor: pointer;
     }
   }
@@ -592,4 +592,45 @@
 		//min-width: 200px;
 		z-index: 20;
 	}
+  &__title {
+    @include headline-6();
+    color: $default-icon;
+    opacity: 0.75;
+    padding-bottom: 24px;
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 14px;
+      margin-right: 8px;      
+    }
+    span {
+      @include body-s();
+    }
+  }
+  &__apps {
+    padding-top: 18px;
+    display: flex;
+    img {
+      margin-right: 32px;
+    }
+  }
+  &_vertical {
+    flex-direction: column;
+    
+    .menu__item {
+      padding: 0 0 16px 0;
+    }
+  }
+}
+@media (max-width: 1180px) {
+.unit{
+  &__header {
+    h2 span {
+      display: block;
+    }
+  }
+}
 }
