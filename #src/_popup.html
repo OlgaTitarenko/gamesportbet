@@ -4,7 +4,7 @@
 			<div class="popup__close"></div>
 			<form action="#" class="form">
 				<h2>Промокод</h2>
-				<div class="form__line">
+				<div class="form__line form__line_padding">
 					<input class="form__input input" type="text" placeholder="Введите промокод" />
 				</div>
 				<button class="button">
@@ -16,6 +16,758 @@
 		</div>
 	</div>
 </div>
+
+<div class="popup popup_fix-size popup_login">
+	<div class="popup__content">
+		<div class="popup__body popup__body_space-between ">
+			<div class="popup__close"></div>
+			<div>
+				<h2>Войти</h2>
+				<div class="social">
+	
+				
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/fb.svg" alt="">
+					</div>
+					
+					Facebook
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/vk.svg" alt="">
+					</div>
+					Вконтакте
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/gmail.svg" alt="">
+					</div>
+					
+					Google
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/mail.svg" alt="">
+					</div>
+				
+					Mail.ru
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/yandex.svg" alt="">
+					</div>
+					
+					Яндекс
+				</a>
+				<a href="#email-or-phone" class="social__button _popup-link">
+					<div class="social__icon">
+						<img src="./img/icons/email.svg" alt="">
+					</div>
+					
+					Почту или телефон
+				</a>		
+				
+				</div>
+			</div>
+			
+			<div>
+				<a href="#signup" class="button button_text-gradient _popup-link">
+					Зарегистрироваться
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_email-or-phone">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>	
+			<h2>Войти</h2>
+			<form action="#" class="form">
+				<div class="form__line form__line_padding">
+					<label for="login">Почта или телефон</label>
+					<input  id="login" name="login" class="form__input input _req" 
+					data-error="Введите почту или телефон"
+					data-value />
+				</div>
+				<div class="form__line form__line_padding">
+					<label for="pass">Пароль</label>
+					<div class="input_icon">
+						<input id="pass" name="pass" type="password" class="form__input input _req" 
+						data-error="Введите пароль"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+					
+				</div>
+				<div class="form__buttons form__buttons_inline ">
+					<button type="submit" class="button">
+						Войти
+					</button>
+					<a href="#lost-pass" class="button button_text-gradient _popup-link">
+						Забыли пароль?
+					</a>
+				</div>
+				
+			</form>
+			
+
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_lost-pass">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+			<h2>Восстановление доступа</h2>
+			<p>
+				Введите email или телефон, на него придет письмо со ссылкой для сброса пароля.
+			</p>
+			<form action="#" class="form">
+				<div class="form__line form__line_padding">
+					<label for="login-refresh">Почта или телефон</label>
+					<input  id="login-refresh" name="login" class="form__input input _req" 
+					data-error="Введите почту или телефон"
+					data-value />
+				</div>
+				
+				<div class="form__buttons form__buttons_inline ">
+					
+					<a href="#letter-is-send" class="_popup-link button">
+						Отправить
+					</a>
+					
+					<a href="#email-or-phone" class="button button_text-gradient _popup-link">
+						Вернутся
+					</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_letter-is-send">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+			<h2>Письмо отправлено</h2>
+			<p>
+				Проверьте &#60;email&#62;, перейдите по ссылке в письме для сброса пароля
+			</p>
+			<a href="#login" class="button button_text-gradient _popup-link">
+				Перейти к входу
+			</a>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup_fix-size popup_signup">
+	<div class="popup__content">
+		<div class="popup__body popup__body_space-between ">
+			<div class="popup__close"></div>
+			<div>
+				<h2>Регистрация</h2>
+				<div class="social">
+	
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/fb.svg" alt="">
+					</div>
+					
+					Facebook
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/vk.svg" alt="">
+					</div>
+					Вконтакте
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/gmail.svg" alt="">
+					</div>
+					
+					Google
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/mail.svg" alt="">
+					</div>
+				
+					Mail.ru
+				</a>
+				<a href="#" class="social__button">
+					<div class="social__icon">
+						<img src="./img/icons/yandex.svg" alt="">
+					</div>
+					
+					Яндекс
+				</a>
+				<a href="#email" class="social__button _popup-link">
+					<div class="social__icon">
+						<img src="./img/icons/email.svg" alt="">
+					</div>
+					
+					Через почту
+				</a>	
+				<a href="#phone" class="social__button _popup-link">
+					<div class="social__icon">
+						<img src="./img/icons/phone-s.svg" alt="">
+					</div>
+					
+					Через телефон
+				</a>	
+				
+				</div>
+			</div>
+			
+			<div>
+				<a href="#login" class="button button_text-gradient _popup-link">
+					Войти
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup_fix-size popup_email">
+	<div class="popup__content">
+		<div class="popup__body popup__body_space-between">
+			<div>
+				<div class="popup__close"></div>
+				<h2>Регистрация</h2>
+			<form action="#" class="form">
+				<div class="form__line form__line_padding">
+					<label for="email">Почта</label>
+					<input  id="email" class="form__input input _req" 
+					name="email"
+					data-error="Введите почту"
+					data-value />
+				</div>
+				<div class="form__line form__line_padding">
+					<label for="signup-pass">Пароль</label>
+					<div class="input_icon">
+						<input id="signup-pass" name="pass" type="password" class="form__input input _req" 
+						data-error="Длина пароля должна быть минимум 8 символов"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+					
+				</div>
+				<div class="form__line form__line_padding">
+					<label for="signup-pass2">Пароль</label>
+					<div class="input_icon">
+						<input id="signup-pass2" name="pass" type="password" class="form__input input _req" 
+						data-error="Пароли не совпадают"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<button type="submit" class="button">
+						Зарегистрироваться
+					</button>
+				</div>
+				
+				
+				
+			</form>	
+			</div>
+			
+			<a href="#signup" class="button button_text-gradient _popup-link">
+				Назад
+			</a>
+
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_phone">
+	<div class="popup__content">
+		<div class="popup__body popup__body_space-between">
+			<div>
+				<div class="popup__close"></div>	
+				<h2>Регистрация</h2>
+				<form action="#" class="form">
+					<div class="form__line form__line_padding">
+						<label for="phone">Телефон</label>
+						<input  id="phone" name="login" class="form__input input _req _phone" 
+						data-error="Введите  телефон"
+						data-value="+7 (xxx) xxx xx xx" />
+					</div>
+					
+					<div class="form__buttons">
+						<a href="#code-whatsapp" class="button _popup-link">
+							Зарегистрироваться
+						</a>
+						
+					</div>
+				</form>
+			</div>
+			<a href="#signup" class="button button_text-gradient _popup-link">
+				Назад
+			</a>
+			
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_code-whatsapp">
+	<div class="popup__content">
+		<div class="popup__body">
+			
+				<div class="popup__close"></div>
+				<h2>Код подтверждения отправлен</h2>
+				<p>
+					Отправлен код подтвержения через 
+					<span class="media"> <img src="./img/icons/whatsapp.svg" alt=""> Whatsapp </span>
+				</p>
+			<form action="#" class="form">
+				<div class="form__line form__line_padding">
+					<label for="code-whatsapp">Код</label>
+					<input  id="code-whatsapp" name="code" class="form__input input _req _digital" 
+					name="email"
+					data-error="Введите почту"
+					data-value />
+					<span class="form__info">
+						Отправить новый код через 185 сек.
+					</span>
+				</div>
+				
+			
+				<div class="form__buttons">
+					<a href="#create-pass" class="button">
+						Продолжить
+					</a>
+				</div>
+			
+			</form>	
+
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_code">
+	<div class="popup__content">
+		<div class="popup__body">
+			
+				<div class="popup__close"></div>
+				<h2>Код подтверждения отправлен</h2>
+				<p>
+					На указанный номер отправлен код подтвержения
+				</p>
+			<form action="#" class="form">
+				<div class="form__line form__line_padding">
+					<label for="code">Код</label>
+					<input  id="code" name="code" class="form__input input _req _digital" 
+					name="email"
+					data-error="Введите почту"
+					data-value />
+					<span class="form__info">
+						Отправить новый код через 185 сек.
+					</span>
+				</div>
+				
+				<div class="form__buttons">
+					<a href="#create-pass" class="button">
+						Продолжить
+					</a>
+				</div>
+			</form>	
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_create-pass">
+	<div class="popup__content">
+		<div class="popup__body ">
+		
+				<div class="popup__close"></div>
+				<h2>Придумайте пароль</h2>
+			<form action="#" class="form">
+				
+				<div class="form__line form__line_padding">
+					<label for="signup-pass-again">Пароль</label>
+					<div class="input_icon">
+						<input id="signup-pass-again" name="pass" type="password" class="form__input input _req" 
+						data-error="Длина пароля должна быть минимум 8 символов"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+					
+				</div>
+				<div class="form__line form__line_padding">
+					<label for="signup-pass-again1">Повторите пароль</label>
+					<div class="input_icon">
+						<input id="signup-pass-again1" name="pass-again" type="password" class="form__input input _req" 
+						data-error="Пароли не совпадают"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<button type="submit" class="button">
+						Завершить регистрацию
+					</button>
+				</div>	
+				
+			</form>	
+
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_error">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+			<h2>Ошибка</h2>
+			<p>
+				Произошла ошибка во время выполнения операции. Попробуйте повторить.
+			</p>
+			<a href="#login" class="button button_text-gradient _popup-link">
+				Назад
+			</a>
+
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_change-pass">
+	<div class="popup__content">
+		<div class="popup__body ">
+		
+				<div class="popup__close"></div>
+				<h2>Придумайте новый пароль</h2>
+			<form action="#" class="form">
+				
+				<div class="form__line form__line_padding">
+					<label for="signup-pass-new">Пароль</label>
+					<div class="input_icon">
+						<input id="signup-pass-new" name="pass" type="password" class="form__input input _req" 
+						data-error="Длина пароля должна быть минимум 8 символов"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+					
+				</div>
+				<div class="form__line form__line_padding">
+					<label for="signup-pass-new1">Повторите пароль</label>
+					<div class="input_icon">
+						<input id="signup-pass-new1" name="pass-again" type="password" class="form__input input _req" 
+						data-error="Пароли не совпадают"
+						data-value />
+						<div class="input_icon__icon">
+							<img src="./img/icons/watch.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="form__buttons">
+					<a href="#change-pass-success" class="button">
+						Сменить пароль
+					</a>
+				</div>	
+				
+			</form>	
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_fix-size popup_change-pass-success">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+			<h2>Пароль успешно изменен</h2>
+			<p>
+				Через 10 секунд вы будете перенаправлены на главную страницу.
+			</p>
+			<a href="#login" class="button button_text-gradient _popup-link">
+				Перейти на главную
+			</a>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="popup popup_fix-size popup_error-email">
+	<div class="popup__content">
+		<div class="popup__body">
+			
+				<div class="popup__close"></div>
+				<h2>Адрес электронной почты не найден</h2>
+				<p>
+					Для продолжения укажите заполните адрес почты
+				</p>
+			<form action="#" class="form">
+				<div class="form__line form__line_padding">
+					<label for="email-error">Почта</label>
+					<input  id="email-error" class="form__input input _req" 
+					name="email"
+					data-error="Введите почту"
+					data-value />
+				</div>
+				
+				<div class="form__buttons">
+					<a href="#signup" class="button button_text-gradient _popup-link">
+						Назад
+					</a>
+				</div>
+			</form>	
+		</div>
+	</div>
+</div> 
+<!-- bookmakers -->
+
+<div class="popup popup_bookmakers">
+	<div class="popup__content">
+		<div class="popup__body">
+			
+			<div class="popup__close"></div>
+			<h2>Сравнение выбранных БК</h2>
+			<div class="bookmakers-block">
+				<div class="bookmakers-block__header">
+					<div class="bookmakers-block__head bookmakers-block__head_gold " data-color="gold">
+						<img class="bookmakers-block__logo" src="./img/logo/BetBoom.svg" alt="">
+						<button>
+							<img class="bookmakers-block__remove" src="./img/icons/close.svg" alt="">
+
+						</button>
+					</div>
+					<div class="bookmakers-block__head bookmakers-block__head_red " data-color="red">
+						<img class="bookmakers-block__logo" src="./img/logo/BetBoom.svg" alt="">
+						<button>
+							<img class="bookmakers-block__remove" src="./img/icons/close.svg" alt="">
+
+						</button>
+					</div>
+					<div class="bookmakers-block__head bookmakers-block__head_green "
+						data-color="green"
+					>
+						<img class="bookmakers-block__logo" src="./img/logo/BetBoom.svg" alt="">
+						<button>
+							<img class="bookmakers-block__remove" src="./img/icons/close.svg" alt="">
+
+						</button>
+					</div>
+					<div class="bookmakers-block__head bookmakers-block__head_blue " data-color="blue">
+						<img class="bookmakers-block__logo" src="./img/logo/BetBoom.svg" alt="">
+						<button>
+							<img class="bookmakers-block__remove" src="./img/icons/close.svg" alt="">
+
+						</button>
+					</div>
+				</div>
+				<div class="bookmakers-block__body">
+					<div class="bookmakers-block__item">
+						<p>
+							Надежность
+						</p>
+						<div>
+							<div class="progress progress_gold" data-color="gold">
+								<div class="progress-value "
+								style="width: 40%;"></div>
+							  </div>
+							  <div class="progress progress_red" data-color="red" >
+								<div 
+								class="progress-value"
+								style="width: 80%;"
+								></div>
+							  </div>
+							  <div class="progress progress_green" data-color="green">
+								<div 
+									class="progress-value"
+									style="width: 40%;"
+								></div>
+							  </div>
+							  <div class="progress progress_blue" data-color="blue">
+								<div 
+								class="progress-value"
+								style="width: 20%;"></div>
+							  </div>
+						</div>
+					</div>
+					<div class="bookmakers-block__item">
+						<p>
+							Удобство платежей
+						</p>
+						<div>
+							<div class="progress progress_gold" data-color="gold">
+								<div class="progress-value "
+								style="width: 40%;"></div>
+							  </div>
+							  <div class="progress progress_red" data-color="red" >
+								<div 
+								class="progress-value"
+								style="width: 80%;"
+								></div>
+							  </div>
+							  <div class="progress progress_green" data-color="green">
+								<div 
+									class="progress-value"
+									style="width: 40%;"
+								></div>
+							  </div>
+							  <div class="progress progress_blue" data-color="blue">
+								<div 
+								class="progress-value"
+								style="width: 20%;"></div>
+							  </div>
+						</div>
+					</div>
+					<div class="bookmakers-block__item">
+						<p>
+							Коэффиценты
+						</p>
+						<div>
+							<div class="progress progress_gold" data-color="gold">
+								<div class="progress-value "
+								style="width: 40%;"></div>
+							  </div>
+							  <div class="progress progress_red" data-color="red" >
+								<div 
+								class="progress-value"
+								style="width: 80%;"
+								></div>
+							  </div>
+							  <div class="progress progress_green" data-color="green">
+								<div 
+									class="progress-value"
+									style="width: 40%;"
+								></div>
+							  </div>
+							  <div class="progress progress_blue" data-color="blue">
+								<div 
+								class="progress-value"
+								style="width: 20%;"></div>
+							  </div>
+						</div>
+					</div>
+					<div class="bookmakers-block__item">
+						<p>
+							Технологии
+						</p>
+						<div>
+							<div class="progress progress_gold" data-color="gold">
+								<div class="progress-value "
+								style="width: 40%;"></div>
+							  </div>
+							  <div class="progress progress_red" data-color="red" >
+								<div 
+								class="progress-value"
+								style="width: 80%;"
+								></div>
+							  </div>
+							  <div class="progress progress_green" data-color="green">
+								<div 
+									class="progress-value"
+									style="width: 40%;"
+								></div>
+							  </div>
+							  <div class="progress progress_blue" data-color="blue">
+								<div 
+								class="progress-value"
+								style="width: 20%;"></div>
+							  </div>
+						</div>
+					</div>
+					<div class="bookmakers-block__item">
+						<p>
+							Бонусы и акции
+						</p>
+						<div>
+							<div class="progress progress_gold" data-color="gold">
+								<div class="progress-value "
+								style="width: 40%;"></div>
+							  </div>
+							  <div class="progress progress_red" data-color="red" >
+								<div 
+								class="progress-value"
+								style="width: 80%;"
+								></div>
+							  </div>
+							  <div class="progress progress_green" data-color="green">
+								<div 
+									class="progress-value"
+									style="width: 40%;"
+								></div>
+							  </div>
+							  <div class="progress progress_blue" data-color="blue">
+								<div 
+								class="progress-value"
+								style="width: 20%;"></div>
+							  </div>
+						</div>
+					</div>
+					<div class="bookmakers-block__item">
+						<p>
+							Служба поддержки
+						</p>
+						<div>
+							<div class="progress progress_gold" data-color="gold">
+								<div class="progress-value "
+								style="width: 100%;"></div>
+							  </div>
+							  <div class="progress progress_red" data-color="red" >
+								<div 
+								class="progress-value"
+								style="width: 80%;"
+								></div>
+							  </div>
+							  <div class="progress progress_green" data-color="green">
+								<div 
+									class="progress-value"
+									style="width: 40%;"
+								></div>
+							  </div>
+							  <div class="progress progress_blue" data-color="blue">
+								<div 
+								class="progress-value"
+								style="width: 20%;"></div>
+							  </div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="popup__footer">
+				<p>
+					На схеме показаны сравнительные графики по каждой характеристике букмекерской конторы.
+				</p>
+				<p>
+					
+					Для сравнения характеристик разных контор наведите курсор на соответствующие логотипы. Совпадающие характеристики показаны смешением цветов.
+				</p>
+			</div>
+				
+			
+		</div>
+	</div>
+</div> 
+
+
+
+
+
 <div class="popup popup_massagename-message">
 	<div class="popup__content">
 		<div class="popup__body">

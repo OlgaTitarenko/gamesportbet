@@ -440,7 +440,9 @@
 		@include text-gradient();
 	  }
   }
-  
+  &_hide {
+    display: none;
+  }
 }
 .profile__user:hover {
   .profile__details {
@@ -502,52 +504,6 @@
 		transform-origin: 50% 50%;
 	}
 }
-
-.title[data-title] {
-  //	background-color: red;
-  position: relative;
-  display: inline-block;
-  line-height: 1;
-
-  &:hover:after {
-    content: attr(data-title);
-    position: absolute;
-    padding: 4px 8px;
-    left: 0;
-    transform: translate(-50%, 0);
-    bottom: 30px;
-    background: $bg-04;
-    color: #fff;
-    @include body-s();
-    width: 100%;
-    min-width: 145px;
-    display: block;
-	z-index: 100;
-  }
-  &:hover:before {
-    position: absolute;
-    content: "";
-    bottom: 25px;
-    left: 10px;
-    transform: translate(-50%, 0) rotate(45deg);
-    background-color: $bg-04;
-    width: 14px;
-    height: 14px;
-	z-index: 100;
-  }
-
- 
-}
-.title_up[data-title] {
-	&:hover:after {
-		bottom: 45px;
-		left: 16px;
-	}
-	&:hover::before {
-		bottom: 40px;
-		left: 16px;
-	}
-  }
 
 .header_menu {
 	background-color: $bg-03;

@@ -249,7 +249,7 @@ if (spollersArray.length > 0) {
 	function initSpollers(spollersArray, matchMedia = false) {
 		spollersArray.forEach(spollersBlock => {
 			spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
-			console.log(spollersBlock)
+		
 			if (matchMedia.matches || !matchMedia) {
 				spollersBlock.classList.add('_init');
 				initSpollerBody(spollersBlock, false);
@@ -264,7 +264,7 @@ if (spollersArray.length > 0) {
 	// Работа с контентом
 	function initSpollerBody(spollersBlock, hideSpollerBody = true) {
 		const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]');
-		console.log(spollerTitles)
+	
 		if (spollerTitles.length > 0) {
 			spollerTitles.forEach(spollerTitle => {
 				if (hideSpollerBody) {
@@ -390,6 +390,7 @@ function digi_animate_value(el, start, end, duration) {
 //=================
 //Popups
 let popup_link = document.querySelectorAll('._popup-link');
+
 let popups = document.querySelectorAll('.popup');
 for (let index = 0; index < popup_link.length; index++) {
 	const el = popup_link[index];

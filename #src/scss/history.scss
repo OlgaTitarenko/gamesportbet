@@ -93,6 +93,7 @@
 
 .months-info{
     padding: 0 32px;
+    position: relative;
 
     &__header {
         display: flex;
@@ -126,6 +127,13 @@
         border-radius: 4px;
         padding-bottom: 32px;
         padding-right: 16px;
+       
+        
+    }
+    &__day-info{
+        position: absolute;
+        top: 0;
+        right: 0;
         
     }
 }  
@@ -186,6 +194,11 @@
     &__main {
         padding-left: 50px;
         padding-top: 32px;
+
+        @media (max-width: 1220px) {
+            padding-left: 16px;
+            padding-top: 16px;
+        }
     }
     &__arrow {
         transform: rotate(-90deg);
@@ -197,59 +210,5 @@
             transform: rotate(90deg);
         }
     }
-    table {
-        width: 100%;
-        border-collapse:separate; 
-        border-spacing: 0 4px;
-        thead {
-            padding-bottom: 4px;
-
-            th {
-                @include body-s();
-                color: $default-icon;
-            }
-        }
-        tbody {
-            
-            tr {
-                margin: 4px 0;
-               position: relative;
-              
-            }
-            .green {
-                border-left: 4px solid rgba($state_success, 0.25);
-            }
-            .orange {
-                border-left: 4px solid rgba($important, 0.25);
-            }
-            .red {
-                border-left: 4px solid rgba($state_fail, 0.25);
-            }
-            tr:nth-child(odd) {
-                background-color: $bg-02;
-            }
-            td {
-                text-align: center;
-                p {
-                    width: 100%;
-                    max-width: 242px;
-                    margin: 0 auto;
-                    text-align: left;
-                    padding: 6px;
-                }
-                span {
-                    @include body-s();
-                }
-                img {
-                    vertical-align: middle;
-                }
-            }
-            .minus {
-                color: $default-icon;
-            }
-            .plus {
-                color: $state_success;
-            };
-        }
-    }
+    
 }

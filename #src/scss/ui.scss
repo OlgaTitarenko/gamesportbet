@@ -298,9 +298,23 @@ body.ie {
 		  }
 		
 	}
+	&_text-gradient {
+		@include text-gradient();
+		background-color: inherit;
+		border:none;
+	}
+	&_simple {
+		background-color: inherit;
+		background-image: none;
+		border:none;
+		color: $text-white;
+	}
 	&_full-width {
 		width: 100%
 	}
+}
+.main-title {
+	@include headline-1();
 }
 .main-subtitle {
     @include headline-4();
@@ -308,6 +322,105 @@ body.ie {
         @include headline-5();
     }
 }
+
+.title[data-title] {
+	//	background-color: red;
+	position: relative;
+	display: inline-block;
+	line-height: 1;
+  
+	&:hover:after {
+	  content: attr(data-title);
+	  position: absolute;
+	  padding: 4px 8px;
+	  left: 0;
+	  transform: translate(-50%, 0);
+	  bottom: 30px;
+	  background: $bg-04;
+	  color: #fff;
+	  @include body-s();
+	  width: 100%;
+	  min-width: 145px;
+	  display: block;
+	  z-index: 100;
+	}
+	&:hover:before {
+	  position: absolute;
+	  content: "";
+	  bottom: 25px;
+	  left: 10px;
+	  transform: translate(-50%, 0) rotate(45deg);
+	  background-color: $bg-04;
+	  width: 14px;
+	  height: 14px;
+	  z-index: 100;
+	}
+  
+   
+  }
+  .title_up[data-title] {
+	  &:hover:after {
+		  bottom: 45px;
+		  left: 16px;
+	  }
+	  &:hover::before {
+		  bottom: 40px;
+		  left: 16px;
+	  }
+	}
+
+.tooltip {
+	position: relative;
+
+	&__body {
+		background-color: $bg-04;
+		border-radius: 4px;
+		padding: 16px;
+		position: absolute;
+		transform: translate(-50%, 0);
+	    bottom: 40px;
+		left: 100px;
+		min-width: 200px;
+		display: none;
+
+		&:before {
+			position: absolute;
+			content: "";
+			bottom: -8px;
+			left: 50%;
+			transform: translate(-50%, 0) rotate(45deg);
+			background-color: $bg-04;
+			width: 14px;
+			height: 14px;
+			z-index: 100;
+		}
+	}
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 8px;
+		&:last-child {
+			padding-bottom: 0;
+		}
+		h5 {
+			@include caption();
+		}
+		p {
+			@include body-s-strong();
+			display: inline-flex;
+			span {
+				color: $gold;
+				font-size: 1.5em;
+			}
+		}
+	}
+	&:hover {
+		.tooltip__body {
+			display: block;
+		}
+	}
+}  
+
 .element {
 	height: 100%;
 
@@ -509,6 +622,7 @@ body.ie {
 
 
 }
+
 .stars_rating {
 	position: relative;
 	font-size: 19px;
@@ -562,7 +676,8 @@ body.ie {
 		opacity: 0;
 	}
 	
-} 
+}
+
 .social-button {
     display: flex;
     align-items: center;
@@ -583,6 +698,7 @@ body.ie {
 		margin-right: 8px;
 	}
 }
+
 .match-prognoze {
 	@include body-strong();
 	display: inline-block;
@@ -604,6 +720,7 @@ body.ie {
         }
     
 }
+
 .rate {
 	@include caption();
 	display: flex;
@@ -621,6 +738,7 @@ body.ie {
 		color: $state_fail;
 	}
 }
+
 .rate-dots {
 	display: flex;
 	justify-content: space-between;
@@ -645,6 +763,7 @@ body.ie {
 
 	}
 }
+
 .match-item {
 	border-radius: 4px;
 	&__head {
@@ -806,6 +925,7 @@ body.ie {
 	}
 
 }
+
 .GS-PRO-bet-card {
 	.match-item__name {
 		color: $state_success;
@@ -814,6 +934,7 @@ body.ie {
 		color: $state_success;
 	}
 }
+
 .GS-LITE-bet-card {
 	.match-item__name {
 		color: $gold;
@@ -825,13 +946,227 @@ body.ie {
 		color: $state_success;
 	}
 }
+
 .USER-bet-card {
 	.match-item__forecast-type__value_color {
 		color: $state_success;
 	}
 }
+
 .Ai-bet-card {
 	.match-item__forecast-type__value_color {
 		color: $state_success;
 	}
+}
+.table  {
+	width: 100%;
+	border-collapse:separate; 
+	border-spacing: 0 4px;
+	color: $text-white;
+
+	thead {
+		padding-bottom: 4px;
+		th {
+			color: $default-icon;
+		}
+	}
+	tbody {
+		tr {
+			position: relative;
+		}
+		td {
+			text-align: center;
+			color: $text-white;
+		}
+		img {
+			vertical-align: middle;
+		}
+		span {
+			@include body-s();
+		}
+		button {
+			color: $text-white;
+		}
+		
+	}
+	
+
+	&_forecast {
+		thead {
+			th {
+				@include body-s();
+			}
+		}
+		tbody {
+			tr:nth-child(odd) {
+				background-color: $bg-02;
+				
+			}
+			td {
+				padding: 12px;
+				
+				p {
+					@include body-xs();
+					display: inline-block;
+					width: 100%;
+					max-width: 242px;
+					margin: 0 auto;
+					text-align: left;
+					padding: 6px;
+				}
+				> div {
+					display: flex;
+					align-items: center;
+				}
+			}
+			.green {
+				border-left: 4px solid rgba($state_success, 0.25);
+			}
+			.orange {
+				border-left: 4px solid rgba($important, 0.25);
+			}
+			.red {
+				border-left: 4px solid rgba($state_fail, 0.25);
+			}
+			.minus {
+				color: $default-icon;
+			}
+			.plus {
+				color: $state_success;
+			}
+			.bet-screenshot {
+				position: relative;
+				display: inline-block;
+				cursor: pointer;
+		
+				&__screenshot {
+					display: none; 
+					position: absolute;
+					left: -10px;
+					top: 18px;
+					width: 200px;
+					z-index: 3;
+					
+					img {
+						width: 100%;
+						object-fit: cover;
+					}
+				}
+				&_active{
+					.bet-screenshot__screenshot {
+						display: block;
+					}
+				}
+			}
+		}
+
+	}
+	&_bookmakers {
+		thead {
+			tr {
+				border-collapse: separate; 
+				border-spacing: 5px 5px;
+			}
+			th {
+				@include body();
+				border-bottom: 2px solid rgba($text-white, 0.1);
+			}
+			th:last-child {
+				width: 200px;
+			}
+			
+		}
+		tbody {
+			p {
+				@include body-strong();
+				span {
+					color: $gold;
+					font-size: 1.5em !important;
+				}
+			}
+			.bonus {
+				&__title {
+					@include caption-s();
+					@include text-gradient();
+					text-align: center;
+				}
+				&__body {
+					img {
+						vertical-align: middle;
+						margin-right: 10px;
+					}
+					span {
+						@include body-strong();
+					}
+				}
+			}
+			td:last-child {
+				text-align: left;
+			}
+		}
+		&__item {
+			background-color: $bg-03 !important;
+			border-radius: 4px;
+			padding: 16px;
+			&:hover {
+				background: rgba(59, 92, 123, 0.15);
+			}
+			>p {
+				text-align: center;
+			}
+			
+		}
+		&__logo {
+			width: 80px;
+			margin-left: 16px;
+			cursor: pointer;
+			ing {
+				width: 100%;
+				object-fit: contain;
+			}
+		}
+		&__buttons {
+			display: flex;
+		}
+	}
+}
+.progress {
+	border: 1px solid $bg-04;
+	justify-content: flex-start;
+	border-radius: 4px;
+	align-items: center;
+	position: relative;
+	display: flex;
+	height: 8px;
+	width: 100%;
+
+	&-value {
+		border-radius: 100px;
+ 		height: 100%;
+	    width: 0;
+		transition: width .5s linear;
+		
+	}
+	&_gold {
+		.progress-value {
+			background-color: $gold;
+
+		}
+	}
+	&_green {
+		.progress-value {
+			background-color: $state_success;
+		}
+	}
+	&_red {
+		.progress-value {
+			background-color: $state_fail;
+		}
+	}
+	&_blue {
+		.progress-value  {
+			background-color: $link;
+		}
+	}
+	
 }

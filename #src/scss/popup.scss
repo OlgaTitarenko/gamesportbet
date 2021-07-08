@@ -58,22 +58,88 @@
 	&__body {
 		transform: scale(0);
 		transition: all 0.3s ease 0s;
-		background-color: #fff;
-		padding: 50px;
+		background-color: $bg-03;
+		padding: 32px;
 		width: 100%;
 		max-width: 800px;
+		border-radius: 4px;
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+		}
+		h2 {
+			@include headline-4();
+			margin-bottom: 32px;
+			text-align: center;
+		}
+		p {
+			@include body();
+			text-align: center;
+			padding-bottom: 32px;
+		}
+		.media {
+			color: $state_success;
+		}
+		.social {
+			width: 100%;
+
+			&__button {
+				@include button();
+				width: 100%;
+				display: block;
+				padding: 12px 20px;
+				margin-bottom: 16px;
+				background-color: $bg-02;
+				border-radius: 4px;
+				color: $text-white;
+				letter-spacing: 0.01em;
+
+				
+			}
+			&__icon {
+				display: inline-block;
+				margin-right: 10px;
+				width: 20px;
+				picture {
+					margin: 0 auto;
+				}
+				img {
+					vertical-align: middle;
+					
+				}
+			}
+		}
+
+		&_space-between {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
 	}
 	// .popup__close
 	&__close {
 		width: 15px;
 		height: 15px;
 		position: absolute;
-		top: 0px;
-		right: 0px;
+		top: 8px;
+		right: 8px;
 		cursor: pointer;
 		z-index: 30;
 		background: url("../img/icons/close.svg") 0 0 no-repeat;
 		background-size: cover;
+	}
+	&__footer {
+		padding: 16px;
+
+		p {
+			@include body();
+			opacity: 0.5;
+			text-align: left;
+			padding-bottom: 16px;
+		}
 	}
 }
 //====================================================================================================
@@ -81,29 +147,101 @@
 .popup_promocode {
 	.popup {
 		&__body {
-			background-color: $bg-03;
-			padding: 40px;
 			max-width: 432px;
-			.form {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: space-around;
-			}
-			h2 {
-				@include headline-4();
-				margin-bottom: 32px;
-				text-align: center;
-			}
+			padding: 40px;
 			.input {
 				margin-bottom: 16px;
 			}
 			
 		}
-		&__close {
-			top: 8px;
-			right: 8px;
+		
+	}
+
+}
+.popup_fix-size {
+	.popup {
+		&__body {
+			width: 320px;
+			height: 610px;
+			
+		
+		}
+	}
+}
+.popup_bookmakers {
+	.popup {
+		&__body {
+			h2 {
+				text-align: left;
+			}
 		}
 	}
 
+	.bookmakers-block {
+		&__header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-bottom: 100px;
+		}
+		&__head {
+			margin: 16px;
+			padding: 12px 8px;
+			display: flex;
+			align-items: center;
+			border-bottom: 2px solid;
+			opacity: 0.5;
+			cursor: pointer;
+			
+			img {
+				vertical-align: middle;
+			}
+			&:hover {
+				opacity: 1;
+			}
+			&_gold {
+				border-color: $gold;
+			}
+			&_red {
+				border-color: $state_fail;
+			}
+			&_green {
+				border-color: $state_success;
+			}
+			&_blue {
+				border-color: $link;
+			}
+		}
+		&__body {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+		}
+		&__item {
+			flex: 0 0 calc(50% - 16px);
+			display: flex;
+			align-items: center;
+			padding-bottom: 32px;
+			
+			p {
+				@include body-strong();
+				flex: 0 0 50%;
+				padding-bottom: 0;
+				text-align: right;
+				padding-right: 24px;
+			}
+			>div {
+				flex: 0 0 50%;
+
+				.progress {
+					margin-bottom: 8px;
+					opacity: 0.25;
+					&._active {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
 }

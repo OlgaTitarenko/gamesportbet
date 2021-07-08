@@ -1,0 +1,263 @@
+.page {
+    &__bookmakers {
+        max-width: $maxWidthContainer;
+        width: 100%;
+        margin: 0 auto;
+        padding: 32px 0 32px;
+    }
+    &__header {
+        padding: 16px 0;
+    }
+    &__title {
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 8px;
+    }
+    &__description {
+        @include body();
+        /* identical to box height, or 162% */
+        text-align: center;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* Text/Primary light */
+        color: $text-white;
+
+        opacity: 0.5;
+
+
+    }
+   
+}
+.bookmakers {
+    display: flex;
+    width: 100%;
+    padding-right: 32px;
+
+    &__body {
+        width: 100%;
+        padding:0 32px;
+    }
+    
+    &__aside {
+        width: 320px;
+        
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
+.bookmakers-menu {
+    position: relative;
+    &__header{
+        position: relative;
+        padding-left: 32px;
+    }
+    &__close {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 16px;
+        transform: translateY(-50%);
+        display: none;
+    }
+    &__body {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 350px;
+        background-color: $bg-03;
+        box-shadow: 0px 0px 60px #0F1526;
+        border-radius: 4px;
+        padding: 16px;
+        display: none;
+        z-index: 2;
+    }
+    &__item {
+        @include body();
+        color: $text-white;
+        opacity: 0.5;
+        padding-bottom: 24px;
+        
+       
+        &:hover {
+            opacity: 1;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+
+}
+.bookmakers-menu__open {
+    .bookmakers-menu {
+        &__close {
+            display: block;
+        }
+        &__body {
+            display: block;
+        }
+
+    }
+}
+
+.bookmakers-text {
+    padding: 48px 0 0 32px;
+    &_flex {
+        display: flex;
+        padding-bottom: 64px;
+    }
+    &__item {
+        padding-right: 32px;
+
+        p {
+            @include body();
+        }
+        &_half {
+            flex:  0 0 50%;
+        }
+        &_quarter {
+            flex: 0 0 25%;
+        }
+    }
+}
+.link-back {
+   
+    @include body-s();
+    color: $link;
+    padding-left: 32px;
+    padding-bottom: 16px;
+
+}
+.bookmaker-info {
+    background-color: $bg-03;
+    padding:0 24px;
+    display: flex;
+
+    >div {
+        flex: 0 0 50%;
+        padding: 48px 24px;
+    }
+    p{
+        @include body();
+        padding-bottom: 32px;
+     }
+    &__logo {
+        position: relative;
+        margin-bottom: 24px;
+
+        .logo {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    &__lable {
+        @include caption-s();
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        background-color: $state_success;
+        color: #000;
+        padding: 5px 8px;
+        z-index: 2;
+        img {
+            vertical-align: middle;
+        }
+        &.title[data-title]:hover{
+            &:after {
+                left: 50%;
+                bottom: 40px;
+            }
+            &:before {
+                left: 50%;
+                bottom: 35px;
+            }
+        }
+    }
+    .button {
+        margin-bottom: 32px;
+    }
+    &__characteristic {
+        >div {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 16px;
+            h4 {
+                @include body();
+            }
+        }
+    }
+
+}
+.bookmakers-other {
+    background-color: $bg-03;
+    border-radius: 4px;
+    padding: 24px 16px;
+
+    .main-subtitle {
+        text-align: center;
+        padding-bottom: 24px;
+    }
+
+    &__item {
+       
+        border: 2px solid $bg-03;
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+            background: linear-gradient(0deg, rgba(59, 92, 123, 0.15), rgba(59, 92, 123, 0.15)), #171F32;
+            border-color: $bg-04;
+        }
+        p {
+            @include body-strong();
+
+            span {
+                color: $gold;
+            }
+        }
+    }
+    .button {
+        margin-top: 42px;
+    }
+}
+.bookmakers-info {
+    padding-top: 64px;
+    height: 874px;
+    overflow: hidden;
+    .main-subtitle{
+        padding-bottom: 16px;
+    }
+    p {
+        @include body();
+        padding-bottom: 16px;
+    }
+    &_full {
+        height: auto;
+    }
+    
+
+}
+.expand {
+    @include body-s();
+    color: $link;
+    padding-top: 8px;
+}
+.banner {
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+.bookmaker-comments {
+    margin-top: 32px;
+    background-color: $bg-03;
+    padding:0 24px;
+
+}

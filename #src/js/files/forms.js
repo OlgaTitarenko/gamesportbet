@@ -185,6 +185,7 @@ function selects_close(e) {
 	}
 }
 function select_init(select) {
+	console.log(select);
 	const select_parent = select.parentElement;
 	const select_modifikator = select.getAttribute('class');
 	const select_selected_option = select.querySelector('option:checked');
@@ -383,7 +384,7 @@ function inputs_init(inputs) {
 					//'+38(999) 999 9999'
 					//'+375(99)999-99-99'
 					input.classList.add('_mask');
-					Inputmask("+375 (99) 9999999", {
+					Inputmask("+7(999) 999 9999", {
 						//"placeholder": '',
 						clearIncomplete: true,
 						clearMaskOnLostFocus: true,

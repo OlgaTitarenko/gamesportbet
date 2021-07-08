@@ -5,12 +5,32 @@
 	&__column {
 	}
 	&__line {
+		label {
+			@include body();
+		}
+		&_padding {
+			padding-bottom: 16px;
+		}
 	}
 	&__input {
 	}
-	&__button {
+	&__buttons {
+		padding-top: 16px;
+		&_inline {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			
+		}
+	}
+	&__info {
+		@include caption();
+		margin-left: 16px;
 	}
 	&__error {
+		@include caption();
+		margin-left: 16px;
+		color: $state_fail;
 	}
 }
 
@@ -164,6 +184,20 @@ textarea {
 textarea.input {
 	resize: none;
 	padding: 0px 0px;
+}
+
+.input_icon {
+	position: relative;
+	
+	input {
+		padding-right: 35px;
+	}
+	
+	&__icon {
+		position: absolute;
+		right: 12px;
+		top: 12px;
+	}
 }
 //</INPUT>====================================================================================================
 

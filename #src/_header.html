@@ -3,23 +3,25 @@
 	  @@include('_matches.html',{})
 
     <div class="header_search">
-      <a href="index.html" class="header_search__logo">
+      <a href="main.html" class="header_search__logo">
         <img src="./img/logo/logo.svg" alt="gamebet logo" />
       </a>
       <div class="header_search__search">
         @@include('_search.html',{})
       </div>
       <div class="header_search__user">
-        <div class="autorization autorization_hide">
-          <button class="autorization__login">
+       
+        <div class="autorization"> <!-- autorization_hide -->
+          <a class="autorization__login _popup-link" href="#login" >
             <img src="./img/icons/user.svg" alt="">
             Войти
-          </button>
-          <button class="autorization__signup button">
+          </a>
+          <a class="autorization__signup button _popup-link" href="#signup" >
             Регистрация
-          </button>
+          </a>
         </div>
-        <div  class="profile">
+        
+        <div  class="profile  profile_hide"><!--   profile_hide -->
           <div class="profile__icons">
             <button>
               <img src="./img/icons/light.svg" alt="">
@@ -227,7 +229,7 @@
               <a class="ellipsis" href="#">Рейтинг аналитиков</a>
             </li>
             <li class="menu__item">
-              <a class="ellipsis" href="#">Рейтинг БК</a>
+              <a class="ellipsis" href="bookmakers.html">Рейтинг БК</a>
             </li>    
             <li class="menu__item">
               <a class="ellipsis" href="#">Стать  аналитиком</a>
